@@ -1,0 +1,293 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Deedy CV/Resume Template
+% Original author: Debarghya Das (http://debarghyadas.com)
+% Repository: https://github.com/deedy/Deedy-Resume
+% License: Apache 2.0
+%
+% IMPORTANT: Compile with XeLaTeX (requires fontspec + Lato/Raleway fonts)
+%
+% ============================================================
+% NOTE(hlim): PHILOSOPHY OF THIS TEMPLATE
+%
+% Industry CVs (especially for big tech / AV companies) should be
+% PROJECT-DRIVEN, not publication-driven.
+%
+% Recruiters ask: "What did you build, and did it actually work?"
+% They do NOT read paper titles. Venue names (ICRA, NeurIPS) serve
+% only as a quality signal — one line is enough for publications.
+%
+% The structure of this template reflects this:
+%   - LEFT  column: Skills + open-source portfolio + Education
+%   - RIGHT column: Experience (impact-driven) + Key Relevant Projects
+%                   + Publications (1 line) + Awards
+%
+% For each job application, the "Key Relevant Projects" section (right col)
+% should be CUSTOMIZED to match the job description.
+% e.g., applying to an AV perception team → emphasize detection/segmentation.
+%       applying to a mapping team        → emphasize SLAM/HD map projects.
+%
+% Reference: https://www.sweresume.app/articles/faang-resume-guide/
+% ============================================================
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{pifont}
+\newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72}\,\textbf{#1}]}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\begin{document}
+
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTE(hlim): Put your name, personal website, email, and one or two key links.
+% Keep the contact line short — 3 items max. Google Scholar is useful for
+% researchers; LinkedIn is useful for everyone. Pick what fits the role.
+\namesection{Hyungtae}{Lim}{
+  \urlstyle{same}\href{https://limhyungtae.github.io/hyungtae-lim/}{limhyungtae.github.io} |
+  \href{mailto:shapelim@mit.edu}{shapelim@mit.edu} |
+  \href{https://scholar.google.com/citations?user=S1A3nbIAAAAJ}{Google Scholar}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE (LEFT)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.33\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+% NOTE(hlim): List ONLY skills you are genuinely proficient in.
+% ATS systems keyword-scan this section — use the exact terms from the
+% job description (e.g., "ROS2", "PyTorch", "C++17", "CUDA").
+% Do NOT pad with tools you barely touched; it will show in interviews.
+% Skills before Education is recommended for industry applications.
+% Reference: https://www.sweresume.app/articles/faang-resume-guide/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Skills}
+\subsection{Programming}
+\location{Proficient:}
+C++ \textbullet{} Python \textbullet{} ROS/ROS2 \\
+\location{Experienced:}
+PyTorch \textbullet{} CUDA \textbullet{} CMake \\
+OpenCV \textbullet{} \LaTeX
+\sectionsep
+
+\subsection{Research}
+SLAM \textbullet{} 3D LiDAR \\
+Point Cloud Registration \\
+Ground Segmentation \\
+Sensor Fusion \textbullet{} Deep Learning \\
+Multi-Robot Mapping
+\sectionsep
+
+\subsection{Languages}
+Korean (Native) \textbullet{} English (Fluent)
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+% NOTE(hlim): Replace with your own links.
+% Scholar is optional — include it only if you have notable citations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Links}
+Website:// \href{https://limhyungtae.github.io/hyungtae-lim/}{\bf limhyungtae.github.io} \\
+GitHub:// \href{https://github.com/limhyungtae}{\bf limhyungtae} \\
+LinkedIn:// \href{https://www.linkedin.com/in/hyungtae-lim}{\bf hyungtae-lim} \\
+Scholar:// \href{https://scholar.google.com/citations?user=S1A3nbIAAAAJ}{\bf Hyungtae Lim}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     KEY OPEN-SOURCE PROJECTS
+% NOTE(hlim): This section is your coding portfolio.
+% Open-source projects with GitHub stars demonstrate two things:
+%   (1) you can write clean, reusable, production-quality code, and
+%   (2) others depend on your work — star count is a proxy for adoption.
+% Keep your strongest 3-5 projects here. If you have no open-source
+% work yet, start one related to the role you're targeting.
+% Format: project name + star badge + one-line description + venue/year.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Key Open-Source Projects}
+\small{Projects others rely on, reflecting both coding quality and real-world impact.}
+\vspace{0.3cm}
+\begin{tightemize}
+\item \href{https://github.com/MIT-SPARK/KISS-Matcher}{\textbf{KISS-Matcher}} \githubstars{643} \\
+Out-of-the-box fast and robust global point cloud registration (\textit{ICRA'25})
+\item \href{https://github.com/MIT-SPARK/VGGT-SLAM}{\textbf{VGGT-SLAM}} \githubstars{882} \\
+Dense real-time RGB SLAM on SL(4) manifold; globally consistent 3D reconstruction (\textit{NeurIPS'25})
+\item \href{https://github.com/url-kaist/patchwork-plusplus}{\textbf{Patchwork++}} \githubstars{842} \\
+$>$100\,Hz LiDAR ground segmentation; deployed in AV production pipelines (\textit{IROS'22})
+\item \href{https://github.com/LimHyungTae/ERASOR}{\textbf{ERASOR}} \githubstars{494} \\
+${\sim}$94\% dynamic-object artifact removal for long-term static map building (\textit{RA-L'21})
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+% NOTE(hlim): Education goes LAST for industry applications.
+% Once you have 2+ years of experience, degree details are rarely
+% a deciding factor. Keep it brief: degree, school, year.
+% GPA is worth including only if it is exceptional (e.g., 4.0/4.0).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+
+\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
+\descript{Ph.D. in Electrical Engineering \& Robotics Program}
+\location{Mar. 2020 -- Feb. 2023 | Daejeon, Korea}
+Advisor: Prof. Hyun Myung \\
+Dissertation: Robust LiDAR SLAM \\
+for Autonomous Vehicles \\
+Leveraging Ground Segmentation
+\sectionsep
+
+\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
+\descript{M.S. in Electrical Engineering \& Robotics Program}
+\location{Mar. 2018 -- Feb. 2020 | Daejeon, Korea}
+\sectionsep
+
+\subsection{Korea Advanced Institute of Science and Technology (KAIST)}
+\descript{B.S. in Mechanical Engineering}
+\location{Mar. 2013 -- Aug. 2018 | Daejeon, Korea}
+Dean's List (Fall 2015)
+\sectionsep
+
+\end{minipage}
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO (RIGHT)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.66\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+% NOTE(hlim): This is the most important section.
+% Every bullet must follow the XYZ formula:
+%   "Accomplished [X] as measured by [Y], by doing [Z]."
+%
+% BAD:  "Worked on SLAM system for autonomous vehicles."
+% GOOD: "Reduced localization failure rate by 40% in corridor environments
+%        by implementing degeneracy-aware weighting in the odometry pipeline."
+%
+% Quantify everything. If you cannot measure directly, estimate scope:
+%   "deployed on 3+ platforms", "city-scale", "10+ robots", "~90% reduction".
+% Power words: real-time, large-scale, robust, deployed, production, pipeline.
+% NOTE(hlim): Do NOT list Teaching Assistant (TA), grading, or academic service roles here.
+% Industry hiring managers look for engineering and research impact in the Experience section.
+% TA duties (office hours, grading, course prep) do not signal the skills tech companies hire for.
+% To show mentorship or leadership instead, frame it as a bullet inside your research role:
+%   e.g. "Mentored 5+ graduate researchers, contributing to 4+ published papers."
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+
+\runsubsection{SPARK Lab, Massachusetts Institute of Technology (MIT)}
+\descript{| Postdoctoral Associate}
+\location{Apr. 2024 -- Mar. 2026 | Cambridge, MA}
+\vspace{0.3cm}
+\begin{tightemize}
+\item Reduced multi-session map inconsistency in city-scale environments by building a large-scale multi-robot SLAM system, enabling real-time 3D mapping across 10+ robots and sessions.
+\item Accelerated research output by mentoring 4+ graduate researchers, contributing to 4+ published papers on 3D perception and autonomous mapping.
+\item Grew combined GitHub adoption to 4K+ stars by maintaining 4 open-source robotics repos (e.g., \href{https://github.com/MIT-SPARK/TEASER-plusplus}{TEASER++} \githubstars{2.1K}, \href{https://github.com/MIT-SPARK/Hydra}{Hydra} \githubstars{773}, \href{https://github.com/MIT-SPARK/KISS-Matcher}{KISS-Matcher} \githubstars{643}, \href{https://github.com/MIT-SPARK/VGGT-SLAM}{VGGT-SLAM} \githubstars{882}).
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Korea Advanced Institute of Science and Technology (KAIST)}
+\descript{| Postdoctoral Fellow}
+\location{Mar. 2023 -- Mar. 2024 | Daejeon, South Korea}
+\begin{tightemize}
+\item Improved localization robustness in dynamic scenes by developing real-time LiDAR-inertial and visual SLAM pipelines, deployed on 3+ mobile robot platforms.
+\item Reduced dynamic-object-induced map corruption by designing deep learning perception modules for obstacle detection in crowded and unstructured environments.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{StachnissLab, University of Bonn}
+\descript{| Visiting Scholar}
+\location{Nov. 2022 -- Feb. 2023 | Bonn, Germany}
+\begin{tightemize}
+\item Cut dynamic-object artifacts in LiDAR maps by ${\sim}$90\% by building ERASOR2, an instance-aware removal system for static map building in urban scenes (RSS 2023).
+\end{tightemize}
+\sectionsep
+
+\runsubsection{NAVER LABS}
+\descript{| Research Intern}
+\location{Apr. 2022 -- Sep. 2022 | Gyeonggi-Do, Korea}
+\begin{tightemize}
+\item Achieved robust global LiDAR registration tolerating up to 99\% outlier correspondences by developing Quatro, exploiting ground segmentation for reliable loop closure in degenerate urban environments (ICRA 2022 / IJRR 2023).
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     KEY RELEVANT PROJECTS
+%
+% NOTE(hlim): *** CUSTOMIZE THIS SECTION FOR EVERY APPLICATION. ***
+%
+% This is the core of a project-driven industry resume.
+% Unlike the open-source portfolio on the left (which stays fixed),
+% this section should change depending on the role:
+%
+%   Applying to AV perception team?
+%     → Highlight 3D detection, sensor fusion, segmentation projects.
+%   Applying to mapping / localization team?
+%     → Highlight SLAM, HD mapping, loop closure projects.
+%   Applying to robot learning / autonomy team?
+%     → Highlight RL, imitation learning, sim-to-real projects.
+%
+% Each bullet must follow the XYZ formula (see Experience section above).
+% The GitHub link proves the code exists and is public. Stars prove adoption.
+%
+% DUMMY ENTRIES BELOW — replace with your own relevant projects:
+% Reade this article: https://www.sweresume.app/articles/faang-resume-guide/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Selected Projects}
+\vspace{0.3cm}
+\begin{tightemize}
+% Replace project name, GitHub URL, star count, description, and venue.
+\item \href{https://github.com/your-org/lidar-slam}{\textbf{[e.g., Real-Time LiDAR SLAM System]}} -- Reduced end-to-end localization drift by X\% in city-scale environments by implementing degeneracy-aware factor graph optimization, running at 10\,Hz on embedded hardware (\textit{[Team/Company, Year]})
+\item \href{https://github.com/your-org/3d-detector}{\textbf{[e.g., 3D Object Detection Pipeline]}} -- Improved long-range detection recall by X\% by fusing LiDAR and camera with a late-fusion Transformer, processing at 20\,Hz on NVIDIA Orin (\textit{[Team/Company, Year]})
+\item \href{https://github.com/your-org/hd-map}{\textbf{[e.g., Incremental HD Map Builder]}} -- Scaled occupancy mapping to campus-scale ($>$1\,km$^2$) by designing an incremental voxel compression pipeline, cutting storage by 60\% vs. naive accumulation (\textit{[Team/Company, Year]})
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+% NOTE(hlim): For industry, publications are a credibility signal — NOT the story.
+% One line is enough. Recruiters do not read paper titles.
+% The venue names (ICRA, NeurIPS, RA-L) signal research quality.
+% If you have 3 or fewer papers, list them individually with a one-line description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Publications}
+10\texttt{+} first-author papers: IEEE ICRA, RSS, RA-L, NeurIPS, ICCV, IJRR
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+% NOTE(hlim): Keep only the most impressive 3-5 awards.
+% Cut anything that needs explanation to sound impressive.
+% Competition wins (especially ranked ones) are more compelling than
+% certificates of participation or minor honorable mentions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Awards}
+\begin{tabular}{rl}
+2025 & Outstanding Reviewer Award, IEEE ICRA'25 (5/7,641) \\
+2024 & RSS Pioneers 2024 (30/202 selected) \\
+2024 & 1\textsuperscript{st} Prize, HILTI SLAM Challenge, IEEE ICRA'24 \\
+2023 & Best Paper Award, IEEE RA-L (5 of 1,100 papers) \\
+2023 & 1\textsuperscript{st} Prize, HILTI SLAM Challenge, IEEE ICRA'23 \\
+2023 & CES'23 Innovation Award \\
+2022 & 2\textsuperscript{nd} Prize, HILTI SLAM Challenge, IEEE ICRA'22 \\
+2020 & Student Best Paper Award, ICCAS \\
+\end{tabular}
+\sectionsep
+
+\end{minipage}
+\end{document}
