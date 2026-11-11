@@ -96,7 +96,7 @@ Best suited for **faculty applications and postdoc positions** where you need to
 
 **How to compile:**
 ```bash
-cd awesome-cv-format
+cd research-cv
 xelatex cv.tex
 ```
 
@@ -141,7 +141,7 @@ A modern two-column resume template created by [Debarghya Das](https://github.co
 - `\runsubsection` and `\descript` commands for consistent entry formatting
 - `\tightemize` environment for compact bullet points
 
-**Note:** This template requires the `deedy-resume.cls` class file. Download it from the [original repository](https://github.com/deedy/Deedy-Resume).
+**Note:** `resume.tex` uses the `deedy-resume-openfont.cls` class file and the Lato and Raleway fonts in `fonts/`. Both ship in this folder. The class comes from the [original repository](https://github.com/deedy/Deedy-Resume).
 
 **How to compile:**
 ```bash
